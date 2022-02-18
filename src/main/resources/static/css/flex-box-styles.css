@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-container {
+    color: #fff;
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    /*border: 1px solid #fff;  !* For debugging *!*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.signup {
+    margin-left: auto;
+}
+
+.login {
+    margin-left: 20px;
+}
+
+.header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+.subscribe{
+    align-self: flex-end;
+    margin-bottom: 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.social {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;  /* can be reversed */
+    /*flex-direction: column;*/
+    align-items: center; /*this becomes horizontal because of the flex-direction*/
+
+}
+
+.photo-grid-item {
+    border: 1px solid #5D6063;
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+.first-item {
+    order: 1;
+}
+
+.last-item {
+    order: -1;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;
+}
+
+.footer-one,
+.footer-three {
+    background-color: #5995DA;
+    flex: initial;
+    width: 300px;
+}

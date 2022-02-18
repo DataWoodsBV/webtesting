@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PieChart</title>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script th:inline="javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            title: {
+                text: "Activities"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0\"%\"",
+                indexLabel: "{label} {y}",
+            }]
+        });
+        chart.render();
+
+
+        var activities = [[${activities}]]
+        var percentages = [[${percentages}]]
+        for (i = 0; i < activities.length; i++) {
+            chart.data[0].addTo("dataPoints", {y: percentages[i], label: activities[i]});
+        }
+    }
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

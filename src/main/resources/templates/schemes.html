@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' th:href="@{/css/schemes.css}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+          integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+</head>
+<body>
+
+<div class='container'>
+    <div class='example relative'>
+        <div class='item'><i class="fa fa-camera-retro fa-5x"></i></div>
+        <div class='item item-relative'><i class="fa fa-camera-retro fa-5x"></i></div>
+        <div class='item'><i class="fa fa-camera-retro fa-5x"></i></div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='example absolute'>
+        <div class='item'><i class="fa fa-camera-retro fa-5x"></i></div>
+        <div class='item item-absolute'><i class="fa fa-camera-retro fa-5x"></i></div>
+        <div class='item'><i class="fa fa-camera-retro fa-5x"></i></div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='example fixed'>
+        <div class='item'><i class="fa fa-camera-retro fa-5x"></i></div>
+        <div class='item item-fixed'><i class="fa fa-camera-retro fa-5x"></i></div>
+        <div class='item'><i class="fa fa-camera-retro fa-5x"></i></div>
+    </div>
+</div>
+
+<script>
+    var left = 0;
+
+    function frame() {
+        var element = document.querySelector('.item-relative');
+        left += 2;
+        element.style.left = left + 'px';
+        if (left >= 300) {
+            clearInterval(id)
+        }
+    }
+
+    var id = setInterval(frame, 10)
+
+</script>
+
+
+</body>
+</html>

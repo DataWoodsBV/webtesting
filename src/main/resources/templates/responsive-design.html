@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' /><!--    disables viewport zooming    -->
+    <link rel='stylesheet' th:href="@{/css/responsive-design.css}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+          integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+</head>
+
+<body>
+<div class='page'>
+    <div class='section menu'></div>
+    <div class='section header'>
+        <div class='photo'>
+            <picture>
+                <source media='(min-width: 501px)'
+                        srcset='/img/photo-big.jpg'/>
+                <source media='(max-width: 500px)'
+                        srcset='/img/photo-tall.jpg'/>
+                <img src='/img/photo-small.jpg'/>
+            </picture>
+        </div>
+    </div>
+
+    <div class='section content'>
+<!--        This is one of the rare times an inline style is acceptable, due to the fact that it’s describing an innate property of the image.   -->
+<!--        <img class='illustration' th:src='@{/img/illustration.svg}' style='max-width: 500px'/>-->
+        <img src='/img/illustration-small.png'
+             srcset='/img/illustration-small.png 1x,
+               /img/illustration-big.png 2x'
+             style='max-width: 500px'/>
+    </div>
+    <div class='section sign-up'>
+        <i class="fa fa-puzzle-piece fa-5x"></i>
+    </div>
+    <div class='section feature-1'>
+        <i class="fa fa-sketchfab fa-5x"></i>
+    </div>
+    <div class='section feature-2'>
+        <i class="fa fa-battery-quarter fa-5x"></i>
+    </div>
+    <div class='section feature-3'>
+        <i class="fa fa-cog fa-spin fa-5x"></i>
+    </div>
+</div>
+
+</body>
+
+
+</html>
