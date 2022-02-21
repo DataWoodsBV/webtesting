@@ -269,9 +269,23 @@ nav a:visited:active {
   background-color: #a2836e;
 }
 
+.strategy-svc{
+  background-color: #416162;
+}
+
 .items-right{
   display: flex;
   justify-content: right;
+  color: black;
+}
+
+.niche-title{
+  color: black;
+  border-bottom: 1px solid black;
+  margin: 20px;
+  margin-left: 0px;
+  padding: 10px;
+  padding-left: 0px;
 }
 
 

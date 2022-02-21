@@ -82,10 +82,5 @@ public class TestController
     {
         return new ModelAndView("line-length");
     }
-    @GetMapping("nlp")
-    ModelAndView nlp()
-    {
-        return new ModelAndView("nlp");
-    }
 
 }
