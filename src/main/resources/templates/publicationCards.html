@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' type="text/css" th:href="@{/css/publication-cards.css}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+          integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+<section style="width: 90%;">
+    <h1>Niche Information</h1>
+    <div>
+        <ul>
+            <li th:each="info : ${informationList}" th:text="${info}"></li>
+<!--            <li>Name: Beeldschermen en Touchscreens</li>-->
+<!--            <li>Iteration starting date: 2020-01-01</li>-->
+<!--            <li>Iteration end date: 2022-01-01</li>-->
+<!--            <li th:text="|Publications found: ${publicationCards.size()}|"></li>-->
+<!--            <li>Train vectors: 21</li>-->
+<!--            <li>Test vectors: 5</li>-->
+<!--            <li>Contrast vectors: 255</li>-->
+<!--            <li>SVC accuracy: 100.0</li>-->
+        </ul>
+    </div>
+</section>
+
+<section style="width: 90%;">
+    <h1>Niche Publications: <span th:text="${nicheCards.size()}"></span></h1>
+    <article class="card" th:each="publicationCard : ${nicheCards}">
+        <div class="cardMetadata">
+            <div class="cardMetadataFlags">
+                <div th:if="${publicationCard.isEu()}">🇪🇺</div>
+                <div th:if="${publicationCard.isEnot()}">🇧🇪</div>
+                <div th:if="${publicationCard.isTned()}">🇳🇱</div>
+
+            </div>
+            <div class="cardMetadataPubDate" th:text="${publicationCard.getDate()}"></div>
+        </div>
+        <div class="cardTitles">
+            <div class="cardAuthority"></div>
+            <a class="cardTitle"
+               th:href="${publicationCard.getUrl()}" target="_blank" rel="noreferrer">
+                <i class="fa fa-external-link inlineIcon-z" aria-hidden="true"></i>
+                <span th:text="${publicationCard.getTitle()}"></span>
+            </a>
+            <div class="cardHighlightContexts">
+                <span th:text="${publicationCard.getDescription()}"></span>
+            </div>
+        </div>
+        <hr class="Divider_divider">
+        <div style="height: 70px;" class="cardHighlights" th:if="${publicationCard.getLotTitles().size() > 0}">
+            <div>
+                <div class="cardHighlight">
+                    <div><a class="cardTitle"><i class="fa fa-file-o inlineIcon-z" aria-hidden="true"></i>Lots selected</a>
+                    </div>
+                    <div class="cardHighlightContexts">
+                        <span th:each="lotTitle : ${publicationCard.getLotTitles()}" th:text="${lotTitle}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+
+<section style="width: 90%;">
+    <h1>Simulation Results: <span th:text="${publicationCards.size()}"></span></h1>
+    <article class="card" th:each="publicationCard : ${publicationCards}">
+        <div class="cardMetadata">
+            <div class="cardMetadataFlags">
+                <div th:if="${publicationCard.isEu()}">🇪🇺</div>
+                <div th:if="${publicationCard.isEnot()}">🇧🇪</div>
+                <div th:if="${publicationCard.isTned()}">🇳🇱</div>
+
+            </div>
+            <div class="cardMetadataPubDate" th:text="${publicationCard.getDate()}"></div>
+        </div>
+        <div class="cardTitles">
+            <div class="cardAuthority"></div>
+            <a class="cardTitle"
+               th:href="${publicationCard.getUrl()}" target="_blank" rel="noreferrer">
+                <i class="fa fa-external-link inlineIcon-z" aria-hidden="true"></i>
+                <span th:text="${publicationCard.getTitle()}"></span>
+            </a>
+            <div class="cardHighlightContexts">
+                <span th:text="${publicationCard.getDescription()}"></span>
+            </div>
+        </div>
+        <hr class="Divider_divider">
+        <div style="height: 70px;" class="cardHighlights" th:if="${publicationCard.getLotTitles().size() > 0}">
+            <div>
+                <div class="cardHighlight">
+                    <div><a class="cardTitle"><i class="fa fa-file-o inlineIcon-z" aria-hidden="true"></i>Lots selected</a>
+                    </div>
+                    <div class="cardHighlightContexts">
+                        <span th:each="lotTitle : ${publicationCard.getLotTitles()}" th:text="${lotTitle}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+</body>
+</html>

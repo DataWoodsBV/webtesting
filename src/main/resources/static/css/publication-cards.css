@@ -1,0 +1,172 @@
+
+.card {
+    /*height: 200px;*/
+    display: flex;
+    flex-direction: column;
+
+    outline: 1px solid #d8d8d8;
+    border-left: 5px solid #ff7617;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    color: #282f34;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 4px #d8d8d8;
+    font-size: medium;
+    text-align: left;
+}
+
+.withHighlights {
+    height: auto;
+}
+
+.skeleton {
+    border-radius: 10px;
+    background-color: #d8d8d8;
+}
+
+.cardMetadata {
+    display: flex;
+}
+
+.cardMetadataFlags {
+    display: flex;
+    gap: 5px;
+}
+
+.cardMetadataPubType {
+    margin-left: auto;
+
+    color: #ff7617;
+    font-variant: small-caps;
+}
+
+.cardMetadataPubDate {
+    margin-left: auto;
+
+    color: #282f34;
+    font-weight: bold;
+}
+
+.cardTitles {
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    gap: 5px;
+}
+
+.cardAuthority {
+    font-variant: small-caps;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cardTitle {
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.1s;
+    color: black;
+/ / @extend downloadLink;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.cardDescription {
+    margin-bottom: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cardDatesBox {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.cardCodesBox {
+}
+
+.cardDatesLine {
+    display: flex;
+}
+
+.cardDatesKey {
+    width: 6em;
+
+    font-weight: bold;
+}
+
+.cardDatesValue {
+}
+
+.cardInteract {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardFollow {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+
+    font-weight: lighter;
+}
+
+.cardAddTag {
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.cardHighlights {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cardHighlight {
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    gap: 5px;
+}
+
+.cardHighlightDownload {
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.1s;
+    color: black;
+/ / @extend downloadLink;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.cardHighlightContexts {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+    gap: 5px;
+}
+
+.cardHighlightContexts em {
+    font-weight: bold;
+    font-style: normal;
+    color: #ff7617;
+}
+
+.inlineIcon {
+    width: 1em;
+}
+

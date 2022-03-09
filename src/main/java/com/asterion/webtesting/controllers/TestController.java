@@ -83,4 +83,10 @@ public class TestController
         return new ModelAndView("line-length");
     }
 
+    @GetMapping("publications")
+    ModelAndView publications()
+    {
+        return new ModelAndView("publications");
+    }
+
 }

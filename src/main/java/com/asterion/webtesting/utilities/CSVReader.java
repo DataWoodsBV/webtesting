@@ -1,8 +1,13 @@
 package com.asterion.webtesting.utilities;
 
+import com.opencsv.exceptions.CsvException;
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public final class CSVReader {
 
@@ -83,6 +88,26 @@ public final class CSVReader {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static List<HashMap<String, String>> map(File csvFile){
+        List<HashMap<String, String>> maps = new ArrayList<>();
+        try{
+            FileReader filereader = new FileReader(csvFile);
+            com.opencsv.CSVReader csvReader = new com.opencsv.CSVReader(filereader);
+            List<String[]> lines = csvReader.readAll();
+            List<String> headers = Arrays.stream(lines.get(0)).collect(Collectors.toList());
+            List<String[]> valueRows = lines.subList(1, lines.size());
+            for (String[] valueRow : valueRows) {
+                HashMap<String, String> rowMap = new HashMap<>();
+                for (int i = 0; i < headers.size(); i++) {
+                    rowMap.put(headers.get(i), valueRow[i]);
+                } maps.add(rowMap);
+            } return maps;
+        }catch (IOException | CsvException e){
+            e.printStackTrace();
+            return maps;
         }
     }
 }
