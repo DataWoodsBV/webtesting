@@ -9,8 +9,18 @@
 </head>
 <body style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
+<section>
+    <nav>
+        <ul>
+            <li th:each="nicheName : ${nicheNames}">
+                <a th:href="@{/publicationCards/{nicheName}(nicheName=${nicheName})}" th:text="${nicheName}"></a>
+            </li>
+        </ul>
+    </nav>
+</section>
+
 <section style="width: 90%;">
-    <h1>Niche Information</h1>
+    <h1 th:text="${name}"></h1>
     <div>
         <ul>
             <li th:each="info : ${informationList}" th:text="${info}"></li>

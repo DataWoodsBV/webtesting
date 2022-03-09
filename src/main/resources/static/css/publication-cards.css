@@ -170,3 +170,29 @@
     width: 1em;
 }
 
+/*NAV*/
+nav ul {
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+nav li {
+    margin: 5px;
+    padding:5px 10px 5px 10px;
+    width: auto;
+    height: 30px;
+    border: 1px solid #5D6063;
+    border-radius: 5px;
+    list-style: none;
+    display: flex;
+}
+
+nav li a {
+    color: black;
+    font-weight: bold;
+    /*padding: 4em;*/
+    text-decoration: none;
+    margin: auto;
+}
